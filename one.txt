@@ -1,0 +1,39 @@
+package Queue;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        // Create Circular Queue of size 5
+        CircularQueue cq = new CircularQueue(5);
+
+        // Insert elements
+        cq.enQueue(10);
+        cq.enQueue(20);
+        cq.enQueue(30);
+        cq.enQueue(40);
+        cq.enQueue(50);
+
+        // Try to insert when queue is full
+        cq.enQueue(60);
+
+        // Peek first element
+        System.out.println("Front Element: " + cq.peek());
+
+        // Remove two elements
+        System.out.println("Deleted: " + cq.deQueue());
+        System.out.println("Deleted: " + cq.deQueue());
+
+        // Insert again (Circular behavior)
+        cq.enQueue(60);
+        cq.enQueue(70);
+
+        // Remove all elements
+        while (!cq.isEmpty()) {
+            System.out.println("Deleted: " + cq.deQueue());
+        }
+
+        // Queue is empty now
+        cq.deQueue();
+    }
+}
