@@ -1,5 +1,0 @@
-private string name;
-private int id;
-
-private string college;
-
